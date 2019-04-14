@@ -53,8 +53,7 @@ def main():
 			gateway = gateway.replace("\n","")
 			if gateway == "0":
 				# gateway = os.popen("ip route show | grep -i 'default via'| awk '{print $3 }'").read()
-				gateway = os.popen(
-				    "netstat -nr | grep -m1 default | awk '{print $2}'").read()
+				gateway = os.popen("netstat -nr | grep -m1 default | awk '{print $2}'").read()
 				gateway = gateway.replace("\n","")
 
 		def home():
@@ -64,8 +63,8 @@ def main():
 			# n_mac  = os.popen("ip addr | grep 'state UP' -A1 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'").read() # Get network mac
 			# n_ip   = os.popen("hostname -I").read() # Local IP address
 			n_name   = os.popen('/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | sed -e "s/^  *SSID: //p" -e d').read() # Get wireless network name
-			n_mac    = os.popen("ip link show en0 | awk '/ether/ {print $2}'").read() # Get network mac
-			n_ip     = os.popen("ipconfig getifaddr en0").read().replace("\n","") # Local IP address
+			n_mac    = os.popen("ip link show "+up_interface+" | awk '/ether/ {print $2}'").read() # Get network mac
+			n_ip     = os.popen("ipconfig getifaddr "+up_interface).read().replace("\n","") # Local IP address
 			n_host   = os.popen("hostname").read() # hostname
 
 
@@ -75,9 +74,10 @@ def main():
 			print ("""
 [+]═══════════[ Author : @LionSec1 \033[1;36m_-\|/-_\033[1;m Website: lionsec.net ]═══════════[+]
 
+                      [ Powered by Bettercap and Nmap ]
+					  
                       [ MacOS port by @marco2012 ]
-
-                      [ Powered by Bettercap and Nmap ]""")
+					  """)
 
 			print(""" \033[1;36m
 ┌═════════════════════════════════════════════════════════════════════════════┐
@@ -88,8 +88,8 @@ def main():
 
 			# Print network configuration , using tabulate as table.
 
-			table = [["IP Address","MAC Address","Gateway","Iface","Hostname"],
-					 [n_ip,n_mac.upper(),gateway,up_interface,n_host]
+			table = [["IP Address","MAC Address","Gateway","Iface","Hostname","Network Name"],
+					 [n_ip,n_mac.upper(),gateway,up_interface,n_host, n_name]
 					]
 			print (tabulate(table, stralign="center",tablefmt="fancy_grid",headers="firstrow"))
 			print ("")
