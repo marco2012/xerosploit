@@ -11,7 +11,9 @@ This is a port for MacOS of the original [Xerosploit framework](https://github.c
 Xerosploit is a penetration testing toolkit whose goal is to perform man in the middle attacks for testing purposes. It brings various modules that allow to realise efficient attacks, and also allows to carry out denial of service attacks and port scanning.
 Powered by <a href="https://www.bettercap.org"> bettercap</a> and <a href="https://www.bettercap.org"> nmap</a>.
 
-<img src="img.png" width="80%"/>
+<p align="center">
+  <img src="img.png" width="80%"/>
+</p>
 
 Dependencies
 =
