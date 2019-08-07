@@ -22,9 +22,6 @@ Dependencies
 - [Nmap](https://nmap.org/)
 - [iproute2mac](https://github.com/brona/iproute2mac)
 
-```
-brew install iproute2mac nmap bettercap
-```
 
 Installation
 =
