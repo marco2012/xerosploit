@@ -39,7 +39,7 @@ if __name__ == "__main__":
 		# install = os.system( "apt-get update && apt-get install -y nmap hping3 build-essential python-pip ruby-dev git libpcap-dev libgmp3-dev && pip install tabulate terminaltables")
 		# install1 = os.system("""cd tools/bettercap/ && chmod +x bin/xettercap && gem build bettercap.* && sudo gem install xettercap-* && rm xettercap-* && cd ../../ && sudo mkdir -p /opt/xerosploit && sudo cp -R tools/ /opt/xerosploit/ && sudo cp xerosploit.py /opt/xerosploit/xerosploit.py && sudo cp banner.py /opt/xerosploit/banner.py && sudo cp run.sh /usr/local/bin/xerosploit && sudo chmod +x /usr/local/bin/xerosploit && tput setaf 34; echo "Xerosploit has been sucessfuly installed. Reopen terminal nad execute 'sudo xerosploit'." """)	
 		os.system("brew install iproute2mac nmap hping bettercap && gem install bettercap")
-		os.system("pip2 install tabulate terminaltables twisted Pillow && cd sslstrip && python setup.py install && cd ..")
+		os.system("sudo pip2 install tabulate terminaltables twisted Pillow && cd sslstrip && python setup.py install && cd ..")
 		os.system("""
 			sudo mkdir -p /opt/xerosploit && \
 			sudo cp -R tools/ /opt/xerosploit/tools && \
